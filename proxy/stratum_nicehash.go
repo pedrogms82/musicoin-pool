@@ -114,10 +114,12 @@ func(cs *Session) getNotificationResponse(s *ProxyServer, id *json.RawMessage) J
 	}
 
 	result := make([]interface{}, 2)
+
 	param1 := make([]string, 3)
 	param1[0] = "mining.notify"
 	param1[1] = generateRandomString(32)
 	param1[2] = "EthereumStratum/1.0.0"
+
 	result[0] = param1
 	result[1] = s.Extranonce
 
@@ -199,7 +201,7 @@ func (cs *Session) handleNHTCPMessage(s *ProxyServer, req *StratumReq) error {
 
 		resp := cs.getNotificationResponse(s, req.Id)
 		return cs.sendTCPNHResult(resp)
-		return cs.sendTCPNHResult(resp)
+
 
 	case "mining.authorize":
 		var params []string
@@ -225,7 +227,7 @@ func (cs *Session) handleNHTCPMessage(s *ProxyServer, req *StratumReq) error {
 		paramsDiff := []int64{
 			4,
 		}
-		respReq := JSONRpcReqNH{Method:"mining.set_difficulty", Params:paramsDiff}
+		respReq := JSONRpcReqNH{Id:nil,Method:"mining.set_difficulty", Params:paramsDiff}
 		if err := cs.sendTCPNHReq(respReq); err != nil {
 			return err
 		}
@@ -248,7 +250,7 @@ func (cs *Session) handleNHTCPMessage(s *ProxyServer, req *StratumReq) error {
 		params = []string{
 			nonce,
 			cs.JobDeatils.SeedHash,
-			cs.JobDeatils.SeedHash,
+			cs.JobDeatils.HeaderHash,
 		}
 
 		reply, errReply := s.handleTCPSubmitRPC(cs, id, params)
