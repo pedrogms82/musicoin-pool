@@ -69,6 +69,17 @@ May be need instal npm of su.
     bower install
     ./build.sh
 
+For lazy deploy https://github.com/DowJhob/open-ethereum-pool/blob/DowJhob-V2.0_Mc/deploy.sh
+
+
+
+
+
+
+
+
+
+
 Configure nginx to serve API on <code>/api</code> subdirectory.
 Configure nginx to serve <code>www/dist</code> as static website.
 
