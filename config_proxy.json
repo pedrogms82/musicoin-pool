@@ -7,7 +7,7 @@
 
 	"proxy": {
 		"enabled": true,
-		"listen": "0.0.0.0:6666",
+		"listen": "0.0.0.0:8888",
 		"limitHeadersSize": 1024,
 		"limitBodySize": 256,
 		"behindReverseProxy": false,
@@ -20,8 +20,8 @@
 		"maxFails": 100,
 
 		"stratum": {
-			"enabled": true,
-			"listen": "0.0.0.0:6006",
+			"enabled": false,
+			"listen": "0.0.0.0:8008",
 			"timeout": "120s",
 			"maxConn": 8192
 		},
@@ -58,7 +58,7 @@
 		"enabled": false,
 		"purgeOnly": false,
 		"purgeInterval": "10m",
-		"listen": "0.0.0.0:6060",
+		"listen": "0.0.0.0:8545",
 		"statsCollectInterval": "5s",
 		"hashrateWindow": "30m",
 		"hashrateLargeWindow": "3h",
@@ -71,18 +71,18 @@
 	"upstream": [
 		{
 			"name": "node02",
-			"url": "http://10.128.0.50:8545",
+			"url": "http://127.0.0.1:8545",
 			"timeout": "10s"
 		},
 		{
 			"name": "backup",
-			"url": "http://10.128.0.50:8545",
+			"url": "http://127.0.0.1:8545",
 			"timeout": "10s"
 		}
 	],
 
 	"redis": {
-		"endpoint": "10.128.0.3:6379",
+		"endpoint": "127.0.0.1:6379",
 		"poolSize": 10,
 		"database": 6,
 		"password": "796150b96df22e0097fb57239d6504107b11c430"
@@ -90,14 +90,14 @@
 
 	"unlocker": {
 		"enabled": false,
-		"poolFee": 0,
+		"poolFee": 0.5,
 		"poolFeeAddress": "0x6aca7efaf669751604484be193200f26d6d2330b",
 		"donate": false,
 		"depth": 120,
 		"immatureDepth": 20,
 		"keepTxFees": true,
 		"interval": "15m",
-		"daemon": "http://10.128.0.50:8545",
+		"daemon": "http://127.0.0.1:8545",
 		"timeout": "10s"
 	},
 
@@ -105,7 +105,7 @@
 		"enabled": false,
 		"requirePeers": 5,
 		"interval": "120m",
-		"daemon": "http://10.128.0.50:8545",
+		"daemon": "http://127.0.0.1:8545",
 		"timeout": "10s",
 		"address": "0x8001ef52303219ddd966af8e9fa0819e2b3b508e",
 		"gas": "21000",
@@ -116,7 +116,7 @@
 	},
 
 	"exchange": {
-		"enabled": false,
+		"enabled": true,
 		"url": "https://api.coinmarketcap.com/v1/ticker/?convert=INR",
 		"timeout": "50s",
 		"refreshInterval": "1800s"
