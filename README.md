@@ -40,7 +40,7 @@ First install  [go-ethereum](https://github.com/ethereum/go-ethereum/wiki/Instal
 Clone & compile:
 
     git config --global http.https://gopkg.in.followRedirects true
-    git clone https://github.com/techievee/open-ethereum-pool.git
+    git clone https://github.com/dowjhob/open-ethereum-pool.git
     cd open-ethereum-pool
     make
 
@@ -61,8 +61,9 @@ The frontend is a single-page Ember.js application that polls the pool API to re
     cd www
 
 Change <code>ApiUrl: '//example.net/'</code> in <code>www/config/environment.js</code> to match your domain name. Also don't forget to adjust other options.
+May be need instal npm of su.
 
-    npm install -g ember-cli@2.9.1
+    npm install -g ember-cli
     npm install -g bower
     npm install
     bower install
