@@ -1,0 +1,24 @@
+
+[Unit]
+Description=geth for musicoin
+After=network.target
+Documentation=
+
+[Service]
+
+Type=simple
+
+
+ExecStart=/home/bimbo/go-musicoin/build/bin/gmc --datadir /.musicoin --rpc --rpcapi="admin,db,eth,net,web3,personal" --etherbase 0x75c22b658d53490692204cc58a20132902d7ed3c
+#PIDFile=/home/gmc/gmc.pid
+TimeoutStopSec=0
+Restart=on-failure
+User=gmc
+Group=gmc
+
+#ExecStop=-/bin/run-parts --verbose /etc/redis/redis-server.pre-down.d
+#ExecStop=/bin/kill -s TERM $MAINPID
+
+[Install]
+WantedBy=multi-user.target
+

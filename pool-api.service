@@ -1,0 +1,22 @@
+[Unit]
+Description=geth for musicoin
+After=network.target
+Documentation=
+
+[Service]
+
+Type=simple
+
+
+ExecStart=/home/bimbo/open-ethereum-pool/build/bin/open-ethereum-pool /home/bimbo/open-ethereum-pool/api.json
+#PIDFile=/home/gmc/gmc.pid
+TimeoutStopSec=0
+Restart=on-failure
+User=gmc
+Group=gmc
+
+#ExecStop=-/bin/run-parts --verbose /etc/redis/redis-server.pre-down.d
+#ExecStop=/bin/kill -s TERM $MAINPID
+
+[Install]
+WantedBy=multi-user.target
