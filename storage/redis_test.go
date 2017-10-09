@@ -17,7 +17,7 @@ var r *RedisClient
 const prefix = "test"
 
 func TestMain(m *testing.M) {
-	r = NewRedisClient(&Config{Endpoint: "35.187.240.179:6379",Database: 10}, prefix,1000000, "MUSIC")
+	r = NewRedisClient(&Config{Endpoint: "127.0.0.1:6379",Database: 10}, prefix,1000000, "MUSIC")
 	reset()
 	c := m.Run()
 	reset()
@@ -612,5 +612,3 @@ func reset() {
 		r.client.Del(k)
 	}
 }
-
-
