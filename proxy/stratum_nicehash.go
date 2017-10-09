@@ -9,7 +9,7 @@ import (
 	"errors"
 	"time"
 
-	"github.com/techievee/open-ethereum-pool/util"
+	"github.com/pedrogms82/musicoin-pool/util"
 	"math/rand"
 	"strings"
 )
@@ -357,4 +357,3 @@ func (s *ProxyServer) broadcastNewJobsNH() {
 	}
 	log.Printf("Jobs broadcast finished %s", time.Since(start))
 }
-

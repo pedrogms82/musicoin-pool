@@ -7,7 +7,7 @@
         </h1>
         <strong>Min. payout threshold: {{config.PayoutThreshold}}</strong>, Payouts runs every hour.<br/>
 	<table>
-        <tr><td><span class="label label-success">PPLNS</span></td><td> Pay-Per-Last-1000-Shares</td></tr>
+        <tr><td><span class="label label-success">PPLNS</span></td><td> Pay-Per-Last-1500-Shares</td></tr>
         <tr><td><span class="label label-success">4G</span></td><td> Share difficulty for high mining efficiency</td></tr>
 	</table>
       </div>
@@ -33,7 +33,7 @@
   <div class="stats">
     <h4>Your Stats &amp; Payment History</h4>
     <div class="input-group">
-      {{input value=cachedLogin class="form-control" placeholder="Enter Your Ethereum Address"}}
+      {{input value=cachedLogin class="form-control" placeholder="Enter Your Musicoin Address"}}
       <span class="input-group-btn">
         <button class="btn btn-primary" type="button" {{action 'lookup' cachedLogin}}>
           <span style="display: inline;"><i class="fa fa-search"></i> Lookup</span>
@@ -43,17 +43,9 @@
   </div>
   <div>
     <hr/>
-	<h4 class="note note-info">
-      Stratum connections: <br/><br>
-	<table width="50%"><tr><td><u>Location</u></td><td><u>Host</u></td><td><u>Port</u></td></tr>
-		<tr><td>Germany</td><td>etc-de.ethteam.com</td><td>8008</td></tr>
-		<tr><td>USA (North Kansas City)</td><td>etc-us.ethteam.com</td><td>8008</td></tr>
-	</table>
-	</h4>
-     <h4 class="note note-info">
-	<u>Claymore Miner:</u><br>
-	EthDcrMiner64.exe -epool 95.130.131.76:8008 -ewal 0xYOUR_WALLET -epsw x<br>
+    <h2>Claymore ETH Dual</h2>
+    <h4 class="note note-info text-center">
+     EthDcrMiner64.exe -epool musicoinpool.xyz:8008 -ewal YOUR_WALLET -eworker YOUR_WORKER -epsw x  -allpools 1  -allcoins 1
     </h4>
-      
   </div>
 </div>

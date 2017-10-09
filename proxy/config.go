@@ -1,11 +1,11 @@
 package proxy
 
 import (
-	"github.com/techievee/open-ethereum-pool/api"
-	"github.com/techievee/open-ethereum-pool/payouts"
-	"github.com/techievee/open-ethereum-pool/policy"
-	"github.com/techievee/open-ethereum-pool/storage"
-	"github.com/techievee/open-ethereum-pool/exchange"
+	"github.com/pedrogms82/musicoin-pool/api"
+	"github.com/pedrogms82/musicoin-pool/payouts"
+	"github.com/pedrogms82/musicoin-pool/policy"
+	"github.com/pedrogms82/musicoin-pool/storage"
+	"github.com/pedrogms82/musicoin-pool/exchange"
 
 )
 
@@ -74,4 +74,3 @@ type Upstream struct {
 	Url     string `json:"url"`
 	Timeout string `json:"timeout"`
 }
-

@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/techievee/open-ethereum-pool/util"
+	"github.com/pedrogms82/musicoin-pool/util"
 	"gopkg.in/redis.v3"
 	"log"
 

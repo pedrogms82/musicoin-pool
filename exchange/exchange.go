@@ -9,8 +9,8 @@ import (
 	"net/http"
 	"log"
 
-	"github.com/techievee/open-ethereum-pool/util"
-	"github.com/techievee/open-ethereum-pool/storage"
+	"github.com/pedrogms82/musicoin-pool/util"
+	"github.com/pedrogms82/musicoin-pool/storage"
 	"io/ioutil"
 
 )
@@ -138,4 +138,3 @@ func (r *RestClient) doPost(url string, method string) ([]byte, error) {
 
 	return nil, err
 }
-

@@ -1,12 +1,55 @@
+
 <div class="container">
   <div class="page-header">
-    <h1>Features</h1>
+    <h1>How To Mine</h1>
   </div>
+<h2>To mine with claymore:</h2>
+ <p>If you want to mine on this pool using <a href="https://bitcointalk.org/index.php?topic=1433925.0" rel="nofollow" target="_blank">Claymore Dual ETH 10</a> run one of this scripts.</p>
+  <strong>Full examples:</strong><br>
+  Linux:<br>
+  <code>
+  SET GPU_FORCE_64BIT_PTR 0 <br>
+  SET GPU_MAX_HEAP_SIZE 100 <br>
+  SET GPU_USE_SYNC_OBJECTS 1 <br>
+  SET GPU_MAX_ALLOC_PERCENT 100 <br>
+  SET GPU_SINGLE_ALLOC_PERCENT 100 <br>
 
- 
+  ./ethdcrminer64 -epool {{config.HttpHost}}:{{config.HttpPort}} -ewal YOUR_WALLET -eworker YOUR_WORKER  -epsw x -esm 0 -mode 1 -ethi -16384 -erate 1 -wd 1 -allcoins 1 -tt
+  72 -ttli 78 -tstop 82
+  </code>
+  Windows:<br>
+  <code>
+  SET GPU_FORCE_64BIT_PTR 0 <br>
+  SET GPU_MAX_HEAP_SIZE 100 <br>
+  SET GPU_USE_SYNC_OBJECTS 1 <br>
+  SET GPU_MAX_ALLOC_PERCENT 100 <br>
+  SET GPU_SINGLE_ALLOC_PERCENT 100 <br>
+  EthDcrMiner64.exe -epool {{config.HttpHost}}:{{config.HttpPort}} -ewal YOUR_WALLET -eworker YOUR_WORKER -epsw x -allpools 1 -allcoins 1
+  </code>
 
+<hr>
+  <dl class="dl-horizontal">
+    <dt>YOUR_WALLER</dt>
+    <dd>This is your address for payouts, generate one with geth, or mine directly to exchange like
+      <a href="http://poloniex.com" rel="nofollow" target="_blank">Poloniex</a>
+      or <a href="http://bittrex.com" rel="nofollow" target="_blank">Bittrex</a>.<br/>
+      <strong>Example:</strong> <code>0x81c174a8516adbdab1dfad891462969752bb1050</code>.
+    </dd>
+    <dt>YOUR_WORKER</dt>
+    <dd>
+      ID of your farm to distinguish it from your other rig. If you have just one rig, feel free to omit this param.
+      This param must be short alphanumeric string with optional dashes and underscores.<br/>
+      <strong>Example:</strong> <code>rig-1</code>
+    </dd>
+  </dl>
   <h3>PPLNS block reward</h3>
   <p>
    There is no way to cheat the pool.
+  </p>
+  <h4>Advice</h4>
+  <p>CPU mining is not recommended.</p>
+  <h4>Terms of Service</h4>
+  <p>By using the pool you accept all possible risks related to experimental software usage.<br/>
+     Pool owner can't compensate any irreversible losses, but will do his best to prevent worst case.
   </p>
 </div>
